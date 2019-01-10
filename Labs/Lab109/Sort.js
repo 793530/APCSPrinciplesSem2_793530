@@ -7,7 +7,7 @@ Sort
 var txt;
 
 function preload(){           //This opens the text file
-  txt = loadStrings("words.txt");
+  txt = loadStrings("numbers.txt");
 
 }
 
