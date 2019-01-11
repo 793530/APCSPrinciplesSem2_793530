@@ -2,6 +2,8 @@
 // Lab 120 selectionSort
 // 01/11/2019
 
+// finds the lowest number and moves it in to front and then moves the closest-
+//-number to the already sorted number and moves it in front of the last sorted number
 
 var txt;
 
@@ -24,7 +26,7 @@ function selectionSort(txt){               //The code keeps repeating until it i
   for (var i = 0; i < arr.length - 1; i++)
           {
               var index = i;
-              for (var j = i + 1; j < arr.length; j++)
+              for (var j = i + 1; j < arr.length; j++) // If j=i then adds 1 to J and if j is less than
                 if (arr[j] < arr[index])
                   index = j;
         		  //  Swapping Code
