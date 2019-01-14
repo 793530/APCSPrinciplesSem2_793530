@@ -40,14 +40,16 @@ function Sort(txt){               //The code keeps repeating until it is false
 }
 
 /*
-for(var i + length-1; i > 0; i--){
-    for(var j = 0; j > i; j++ ){
-      if(txt[j] > txt[j+1]){
-        var tmp =txt[j];
-        txt[j] = txt[j+1];
-        txt[j+1 = tmp];
-
-Using bubbleSort as a guide to help make a this sort
-
+for (var i = 0; i < arr.length - 1; i++)
+        {
+            var index = i;
+            for (var j = i + 1; j < arr.length; j++) // If j=i then adds 1 to J and if j is less than
+              if (arr[j] < arr[index])
+                index = j;
+            //  Swapping Code
+            var smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
 
 */
