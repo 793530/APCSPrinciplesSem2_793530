@@ -3,46 +3,66 @@
 // 01/10/2019
 
 
-var txt;
-
-function preload(){           //This opens the text file
-  txt = loadStrings("words.txt");
-
-}
+var nums = [2, 6, 1, 5, 8, 12, 3, 4];
 
 function setup() {
 
-  console.log(txt)            //
-  bubbleSort(txt);            //
+  console.log(nums);            //
+  bubbleSort(nums);
+  console.log(nums);              //
 
 
 }
 
-function bubbleSort(txt){               //The code keeps repeating until it is false
+function bubbleSort(n){                //Swap is inside the inner for loop
 
-  var length = arr.length
-  for(var i = arr.length-1; i > 0; i--){
-      for(var j = 0; j > i; j++ ){
-        if(arr[j] > arr[j+1]){
-          var tmp =arr[j];
-          arr[j] = arr[j+1];
-          arr[j+1 = tmp];
-
-
-        }
-
-
-
-
-
+  for(var i = n.length-1; i > 0; i--){
+    for(var j = 1; j <= i; j++ ){
+      if(n[j] < n[j-1]){
+        var tmp =n[j];
+        n[j] = n[j-1];
+        n[j-1] = tmp;
       }
-
-
-
+    }
   }
 
 
 }
+
+
+function insertionSort(n){                //Swap is inside the inner for loop
+
+  for(var i = n.length-1; i > 0; i--){
+    for(var j = 1; j <= i; j++ ){
+      if(n[j] < n[j-1]){
+        var tmp =n[j];
+        n[j] = n[j-1];
+        n[j-1] = tmp;
+      }
+    }
+  }
+
+
+}
+
+
+
+function selectSort(n){               //Swap is outside the inner for loop
+
+  for(var i = n.length-1; i > 0; i--){
+    for(var j = 1; j <= i; j++ ){
+
+    }
+    if(n[j] < n[j-1]){
+      var tmp =n[j];
+      n[j] = n[j-1];
+      n[j-1] = tmp;
+    }
+  }
+
+
+}
+
 
 
 
