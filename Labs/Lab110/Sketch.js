@@ -1,7 +1,9 @@
 // Kalpa Yakupitiyage
-// Lab 110 bubbleSort
+// Lab 110 Sort
 // 01/10/2019
 
+var timestamp = 0;
+var index = 0;
 var temp;
 var nums = [2, 6, 1, 5, 8, 12, 3, 4];
 
@@ -10,9 +12,31 @@ function setup() {
   console.log(nums);            //
   bubbleSort(nums);
   console.log(nums);              //
-
+  createCanvas(400, 400);
 
 }
+
+function draw() {
+  background(255);
+
+  fill(0);
+  textAlign(CENTER);
+  textSize(40);
+  text(nums[index], width/2, height/2);
+
+  if (millis() - timestamp > 1000) {
+    index++;
+    timestamp = millis();
+
+    if (index > nums.length - 1){
+      index = 0;
+    }
+  }
+}
+
+
+//bubbleSort
+
 
 function bubbleSort(n){                //Swap is inside the inner for loop
 
@@ -28,6 +52,9 @@ function bubbleSort(n){                //Swap is inside the inner for loop
 
 
 }
+
+
+// insertionSort
 
 
 function insertionSort(n){                //Swap is inside the inner for loop
@@ -49,6 +76,8 @@ function insertionSort(n){                //Swap is inside the inner for loop
 
 }
 
+
+//selectSort
 
 
 function selectSort(n){               //Swap is outside the inner for loop
