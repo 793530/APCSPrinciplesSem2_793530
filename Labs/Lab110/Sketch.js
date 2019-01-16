@@ -12,8 +12,6 @@ function setup() {
   console.log(nums);            //
   bubbleSort(nums);
   console.log(nums);              //
-  createCanvas(400, 400);
-
 }
 
 function draw() {
@@ -40,16 +38,20 @@ function draw() {
 
 function bubbleSort(n){                //Swap is inside the inner for loop
 
+var m = 0;
   for(var i = n.length-1; i > 0; i--){
     for(var j = 1; j <= i; j++ ){
+      //about to compare
+      m = m + 1
       if(n[j] < n[j-1]){
         var tmp =n[j];
         n[j] = n[j-1];
+        // compare 
         n[j-1] = tmp;
       }
     }
   }
-
+console.log(m);
 
 }
 
