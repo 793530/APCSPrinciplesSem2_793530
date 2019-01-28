@@ -3,7 +3,8 @@
 //18/01/2019
 var data;
 
-function preloader(Population.json){
+function preloader(){
+  data = loadJSON("Population.json");
 
 }
 
@@ -26,18 +27,16 @@ function gotData(newData ){
 
  function draw(){
 
-
-
  }
 
 function selectSort(){               //The code keeps repeating until it is false
-  var length = data.teams.length;
+  var length = data.Population.length;
   for(var i = length-1; i > 0; i--){
     for(var j = 0; j < i; j++ ){
-      if(data.teams[j].rating < data.teams[j+1].rating){
-        var tmp = data.teams[j].rating;
-        data.teams[j].rating = data.teams[j+1].rating;
-        data.teams[j+1].rating = tmp;
+      if(data.Population[j].rating < data.Population[j+1].rating){
+        var tmp = data.Population[j].rating;
+        data.Population[j].rating = data.Population[j+1].rating;
+        data.Population[j+1].rating = tmp;
       }
 
     }
