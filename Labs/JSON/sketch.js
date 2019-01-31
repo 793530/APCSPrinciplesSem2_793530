@@ -4,7 +4,7 @@
 var data;
 
 function preloader(){
-  data = loadJSON("Population.json");
+  data = loadJSON("data.json");
 
 }
 
@@ -13,7 +13,7 @@ function setup(){         // new json
                           // use a different sort code
                           // make a graph
 
-  loadJSON("Population.json", gotData);
+  loadJSON("data.json", gotData);
 
 }
 
@@ -30,13 +30,13 @@ function gotData(newData ){
  }
 
 function selectSort(){               //The code keeps repeating until it is false
-  var length = data.Population.length;
-  for(var i = length-1; i > 0; i--){
+
+  for(var i = data.Murder.length-1; i > 0; i--){
     for(var j = 0; j < i; j++ ){
-      if(data.Population[j].rating < data.Population[j+1].rating){
-        var tmp = data.Population[j].rating;
-        data.Population[j].rating = data.Population[j+1].rating;
-        data.Population[j+1].rating = tmp;
+      if(data.Murder[j].rating < data.Murder[j+1].rating){
+        var tmp = data.Murder[j].rating;
+        data.Murder[j].rating = data.Murder[j+1].rating;
+        data.Murder[j+1].rating = tmp;
       }
 
     }
