@@ -32,27 +32,16 @@ function Ball(loc, rad, col){
   // This function changes the location of the ball
   // by adding speed to x and y
   this.update = function(){
-
+    
     this.vel.add(this.acc);
     this.loc.add(this.vel);
   }
 
   // render() draws the ball at the new location
   this.render = function(){
-
-    var centerVec = createVector(width/2, height/2);
-    var dist = this.loc.dist(centerVec);
-    var clrR = map(dist, 0, 200, 70, 130)
-    var clrG = map(dist, 0, 100, 50, 200)
-    var clrB = map(dist, 0, 400, 30, 70)
-    stroke(clrR, clrG, clrB, 150);
+    stroke(255,150);
     strokeWeight(.5);
     line(this.loc.x, this.loc.y, b1.loc.x , b1.loc.y);
-    line(this.loc.x, this.loc.y, b2.loc.x , b2.loc.y);
-    //line(b1.loc.x, b1.loc.y, b2.loc.x , b2.loc.y);
-
-
-
 
   }
 
