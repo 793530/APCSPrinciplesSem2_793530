@@ -9,7 +9,7 @@ function Ball(location, velocity, radius, col){
   this.vel = velocity;
   this.rad = radius;
   this.col = col;
-  this.acc = createVector(0, 0.5);
+  this.acc = createVector(0, 0.2);
 
   this.run = function (){
     this.checkEdges();
@@ -21,17 +21,17 @@ function Ball(location, velocity, radius, col){
   this.update = function(){
     if(this !== redBall){
       var d = this.loc.dist(redBall.loc);
-      if(d > 150){
+      if(d > 250){
         var steeringForce = p5.Vector.sub(redBall.loc, this.loc);
         steeringForce.normalize();
         steeringForce.mult(.5);
         this.vel.add(steeringForce);
 
       }
-      if(d < 200){
+      if(d < 100){
         var steeringForce = p5.Vector.sub(this.loc, redBall.loc);
         steeringForce.normalize();
-        steeringForce.mult(1);
+        steeringForce.mult(.5);
         this.vel.add(steeringForce);
       }
       this.loc.add(this.vel);
@@ -51,11 +51,11 @@ function Ball(location, velocity, radius, col){
     // ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
     var centerVec = createVector(width/2, height/2);
     var dist = this.loc.dist(centerVec);
-    var clrR = map(dist, 0, 500, 30, 200)
-    var clrG = map(dist, 0, 400, 0 , 0)
-    var clrB = map(dist, 0, 200, 20 , 120)
+    var clrR = map(dist, 0, 500, 30, 100)
+    var clrG = map(dist, 0, 400, 0 , 255)
+    var clrB = map(dist, 0, 200, 20 , 20)
     stroke(clrR, clrG, clrB, 50);
-    strokeWeight(1);
+    strokeWeight(20);
     line(this.loc.x, this.loc.y, redBall.loc.x, redBall.loc.y);
 
     // arc(this.loc.x,this.loc.y,2,50,50,2*Math.PI);

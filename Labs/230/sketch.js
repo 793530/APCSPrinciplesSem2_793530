@@ -8,7 +8,7 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(255,255,255);
-  loadBalls(600);
+  loadBalls(800);
 
 }
 
@@ -28,7 +28,7 @@ function loadBalls(numBalls){
   for(var i = 0; i < numBalls; i++){
     var location = createVector(random(width), random(height));
     var velocity = createVector(random(1.5,2), random(1.5,2));
-    var r = random(20,40);
+    var r = random(40,80);
     var col = color(255, 255, 255);
     Balls.push(new Ball(location, velocity, r, col));
   }
