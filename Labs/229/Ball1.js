@@ -47,8 +47,7 @@ function Ball(location, velocity, radius, col){
   }
 
   this.render = function(){
-    // fill(this.col);
-    // ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
+
     var centerVec = createVector(width/2, height/2);
     var dist = this.loc.dist(centerVec);
     var clrR = map(dist, 0, 500, 30, 200)
@@ -58,7 +57,5 @@ function Ball(location, velocity, radius, col){
     strokeWeight(1);
     line(this.loc.x, this.loc.y, redBall.loc.x, redBall.loc.y);
 
-    // arc(this.loc.x,this.loc.y,2,50,50,2*Math.PI);
-
   }
-}//  end of constructor
+}

@@ -29,15 +29,13 @@ function Ball(loc, rad, col){
     if(this.loc.y < 0) this.vel.y = -this.vel.y;
     if(this.loc.y > height) this.vel.y = -this.vel.y;
   }
-  // This function changes the location of the ball
-  // by adding speed to x and y
+
   this.update = function(){
 
     this.vel.add(this.acc);
     this.loc.add(this.vel);
   }
 
-  // render() draws the ball at the new location
   this.render = function(){
 
     var centerVec = createVector(width/2, height/2);
@@ -49,7 +47,6 @@ function Ball(loc, rad, col){
     strokeWeight(.5);
     line(this.loc.x, this.loc.y, b1.loc.x , b1.loc.y);
     line(this.loc.x, this.loc.y, b2.loc.x , b2.loc.y);
-    //line(b1.loc.x, b1.loc.y, b2.loc.x , b2.loc.y);
 
 
 

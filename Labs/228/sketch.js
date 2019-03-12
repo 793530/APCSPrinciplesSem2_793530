@@ -3,7 +3,6 @@ var b1;
 var b2;
 var balls = [];
 var toggle = true;
-//var attrball;
 // put setup code here
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -19,7 +18,6 @@ function setup() {
   loadBalls(500);
   b2 = new Ball(loc1,rad1,col1);
   loadBalls(500);
-//  attrball = new Ball(width/2,height/2, -1;)
 }
 
 function draw() {
@@ -34,7 +32,6 @@ function draw() {
     for(var i = 0; i<balls.length; i++){
       balls[i].run();
     }
-  //  attrBall.run();
 
   }
 
