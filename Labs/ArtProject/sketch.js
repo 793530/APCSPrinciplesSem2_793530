@@ -5,32 +5,32 @@
 let t = 0; // time variable
 
 let x = [],
-  y = [],
-  segNum = 20,
-  segLength = 18;
+y = [],
+segNum = 20,
+segLength = 18;
 
 for (let i = 0; i < segNum; i++) {
   x[i] = 0;
   y[i] = 0;
 }
 
-function preload() {
-  font = loadFont('assets/SourceSansPro-Regular.otf');
-}
+//function preload() {
+//  font = loadFont('assets/SourceSansPro-Regular.otf');
+//}
 
 function setup() {
   createCanvas(800, 800);
   strokeWeight(9);
   stroke(255, 100);
-//  cols = floor(width/w);
-//rows = floor(height/w);
-//  var u = floor(random(cols))*w;
+  //  cols = floor(width/w);
+  //rows = floor(height/w);
+  //  var u = floor(random(cols))*w;
   //var v = floor(random(rows))*w;
   //food = new Food(createVector(u, v));
 }
 
 function draw() {
-  background(10, 10); // translucent background (creates trails)
+  background(0,0); // translucent background (creates trails)
   dragSegment(0, mouseX, mouseY);
   for (let i = 0; i < x.length - 1; i++) {
     dragSegment(i + 1, x[i], y[i]);
@@ -52,7 +52,7 @@ function draw() {
     }
   }
 
-  t = t + 0.01; // update time
+  //  t = t + 0.01; // update time
 
   //food.run();
 
