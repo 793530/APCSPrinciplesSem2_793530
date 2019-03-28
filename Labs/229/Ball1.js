@@ -9,7 +9,7 @@ function Ball(location, velocity, radius, col){
   this.vel = velocity;
   this.rad = radius;
   this.col = col;
-  this.acc = createVector(0, 0.5);
+  this.acc = createVector(0, 0.3);
 
   this.run = function (){
     this.checkEdges();
@@ -40,20 +40,20 @@ function Ball(location, velocity, radius, col){
 
   }
   this.checkEdges = function(){
-    if(this.loc.x < 0) this.vel.x = -this.vel.x;
-    if(this.loc.x > width) this.vel.x = -this.vel.x;
-    if(this.loc.y < 0) this.vel.y = -this.vel.y;
-    if(this.loc.y > height) this.vel.y = -this.vel.y;
+    if(this.loc.x > 10) this.vel.x = -this.vel.x;
+    if(this.loc.x < width) this.vel.x = -this.vel.x;
+    if(this.loc.y > 10) this.vel.y = -this.vel.y;
+    if(this.loc.y < height) this.vel.y = -this.vel.y;
   }
 
   this.render = function(){
 
-    var centerVec = createVector(width/2, height/2);
+    var centerVec = createVector(width, height);
     var dist = this.loc.dist(centerVec);
-    var clrR = map(dist, 0, 500, 30, 200)
+    var clrR = map(dist, 0, 500, 30, 20)
     var clrG = map(dist, 0, 400, 0 , 0)
-    var clrB = map(dist, 0, 200, 20 , 120)
-    stroke(clrR, clrG, clrB, 50);
+    var clrB = map(dist, 0, 200, 20 , 220)
+    stroke(clrR, clrG, clrB, 90);
     strokeWeight(1);
     line(this.loc.x, this.loc.y, redBall.loc.x, redBall.loc.y);
 

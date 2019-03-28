@@ -69,7 +69,7 @@ function Game(){
       }
       if(this.curKey === "MoveLeft"){
       //  Lab 1:  Enter code here
-      
+
       }
       if(this.curKey === ""){
 

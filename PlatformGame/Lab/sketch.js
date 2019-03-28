@@ -9,13 +9,12 @@
 //  Global variables
 
 var zGame;
-
-
+var backGround;
 
 // put setup code here
 function setup() {
 
-  var cnv = createCanvas(1200, 800);
+  var cnv = createCanvas(1100, 900);
   cnv.position((windowWidth-width)/2, 30);
   zGame = new Game();
   //  assests object
@@ -28,6 +27,7 @@ function setup() {
 
 function draw() {
   background(10, 10, 20, 42);
+
   zGame.run();
   //  Add text to element with id demoDiv
   //document.getElementById("demoDiv").innerHTML = "PlayerStats /n/t x vel = " + zGame.hero.vel.x + "/n/t y vel = " + zGame.hero.vel.y;
@@ -40,9 +40,8 @@ function keyReleased(){
 
 }
 
-
 function keyPressed(){
-   console.log(keyCode);
+
   if(keyCode === 39) {//  right arrow
      zGame.curKey = "MoveRight";
   }
@@ -50,7 +49,8 @@ function keyPressed(){
      zGame.curKey = "MoveLeft";
   }
   if(keyCode === 32){//  space bar
-    //  Lab 1:  Enter code here
+
+    zGame.curKey = "MoveUp";
 
   }
 }
