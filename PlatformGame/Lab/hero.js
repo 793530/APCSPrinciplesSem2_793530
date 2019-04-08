@@ -39,4 +39,4 @@ function Hero(location){
    }
 
 
-}//  End of Game constructor function
+//  End of Game constructor function
