@@ -5,53 +5,54 @@ function Ball(location, velocity, radius, col){
   this.col = col;
   this.acc = createVector(0, 0.2);
 
-  this.run = function (){
-    this.checkEdges();
-    this.update();
-    this.render();
-  }
+}
+this.run = function (){
+  this.checkEdges();
+  this.update();
+  this.render();
+}
 
 
-  this.update = function(){
-    if(this !== redBall){
-      var d = this.loc.dist(redBall.loc);
-      if(d > 250){
-        var steeringForce = p5.Vector.sub(redBall.loc, this.loc);
-        steeringForce.normalize();
-        steeringForce.mult(.5);
-        this.vel.add(steeringForce);
-
-      }
-      if(d < 100){
-        var steeringForce = p5.Vector.sub(this.loc, redBall.loc);
-        steeringForce.normalize();
-        steeringForce.mult(.5);
-        this.vel.add(steeringForce);
-      }
-      this.loc.add(this.vel);
+this.update = function(){
+  if(this !== redBall){
+    var d = this.loc.dist(redBall.loc);
+    if(d > 250){
+      var steeringForce = p5.Vector.sub(redBall.loc, this.loc);
+      steeringForce.normalize();
+      steeringForce.mult(.5);
+      this.vel.add(steeringForce);
 
     }
+    if(d < 100){
+      var steeringForce = p5.Vector.sub(this.loc, redBall.loc);
+      steeringForce.normalize();
+      steeringForce.mult(.5);
+      this.vel.add(steeringForce);
+    }
+    this.loc.add(this.vel);
 
   }
-  this.checkEdges = function(){
-    if(this.loc.x < 0) this.vel.x = -this.vel.x;
-    if(this.loc.x > width) this.vel.x = -this.vel.x;
-    if(this.loc.y < 0) this.vel.y = -this.vel.y;
-    if(this.loc.y > height) this.vel.y = -this.vel.y;
-  }
 
-  this.render = function(){
-    // fill(this.col);
-    // ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
-    var centerVec = createVector(width/2, height/2);
-    var dist = this.loc.dist(centerVec);
-    var clrR = map(dist, 0, 500, 30, 100)
-    var clrG = map(dist, 0, 400, 0 , 255)
-    var clrB = map(dist, 0, 200, 20 , 20)
-    stroke(clrR, clrG, clrB, 50);
-    strokeWeight(20);
-    line(this.loc.x, this.loc.y, redBall.loc.x, redBall.loc.y);
+}
+this.checkEdges = function(){
+  if(this.loc.x < 0) this.vel.x = -this.vel.x;
+  if(this.loc.x > width) this.vel.x = -this.vel.x;
+  if(this.loc.y < 0) this.vel.y = -this.vel.y;
+  if(this.loc.y > height) this.vel.y = -this.vel.y;
+}
 
-    // arc(this.loc.x,this.loc.y,2,50,50,2*Math.PI);
+this.render = function(){
+  // fill(this.col);
+  // ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
+  var centerVec = createVector(width/2, height/2);
+  var dist = this.loc.dist(centerVec);
+  var clrR = map(dist, 0, 500, 30, 100)
+  var clrG = map(dist, 0, 400, 0 , 255)
+  var clrB = map(dist, 0, 200, 20 , 20)
+  stroke(clrR, clrG, clrB, 50);
+  strokeWeight(20);
+  line(this.loc.x, this.loc.y, redBall.loc.x, redBall.loc.y);
 
-  }
+  // arc(this.loc.x,this.loc.y,2,50,50,2*Math.PI);
+
+}
