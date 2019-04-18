@@ -7,7 +7,7 @@
 */
 
 function Platform(x, elev){
-   this.loc = createVector( x, height - elev );
+   this.loc = createVector( x,  elev );
    this.w = 150;
    this.h = 20;
    if(random(0, 1.0)< 0.5) {//  each platform 50% chanve of containg its own coin
@@ -26,7 +26,8 @@ function Platform(x, elev){
 
    this.render = function(){
       fill(200, 30, 50);
-      rect(this.loc.x, this.loc.y, this.w, this.h);
+      //rect(this.loc.x, this.loc.y, this.w, this.h);
+      image(plat, this.loc.x,  this.loc.y - this.h);
    }
 
 

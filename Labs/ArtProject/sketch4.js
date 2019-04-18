@@ -23,6 +23,7 @@ function draw() {
 
   if(!toggle){
     redBall.run();
+
     for(var i = 0; i < Balls.length; i++){
       Balls[i].run();
 

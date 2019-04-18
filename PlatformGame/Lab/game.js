@@ -18,18 +18,18 @@ function Game(){
 
   var numPlatforms = 10;
 
-  this.initGame = function(c, e, p){
+  this.initGame = function(a, e){
 
-    for(let i = 0; i < c.numCoins; i++){
+    for(let i = 0; i < a.numCoins; i++){
       this.gameElements.push(new Coin(i*110+130, height - 130));
     }
 
-    for(let i = 0; i < p; i++){
-      var elev = floor(random(5))*100;
-      this.platforms.push(new Platform(i*200, elev));
+    for(let i = 0; i < numPlatforms; i++){
+      var elev = floor(random(4))*80 + 400;
+      this.platforms.push(new Platform(i*250, elev));
     }
     var heroXLoc = width/2;
-    var heroYLoc = 30 ;
+    var heroYLoc = 20 ;
     this.hero = new Hero(createVector(heroXLoc + 20, heroYLoc));
     this.gameElements.push(this.hero);
 
@@ -41,7 +41,7 @@ function Game(){
   }
 
   this.update = function(){
-     this.setWorldX();
+     this.keyCodeHandler();
      translate(this.worldX, 0 );
      for(var i = 0; i < this.gameElements.length; i++){
         this.gameElements[i].update();
@@ -61,18 +61,29 @@ function Game(){
      }
    }
 
-   this.setWorldX = function(){
+   this.keyCodeHandler = function(){
 
       if(this.curKey === "MoveRight"){
-       //  Lab 1:  Enter code here
+        this.worldX += this.worldXSpeed;
+
+        this.hero.loc.x -= this.worldXSpeed;
 
       }
       if(this.curKey === "MoveLeft"){
-      //  Lab 1:  Enter code here
-
+        this.worldX -= this.worldXSpeed;
+        this.hero.loc.x += this.worldXSpeed;
       }
-      if(this.curKey === ""){
-
+      if(this.curKey === "Jump"  ){
+        if(!this.hero.inAir){
+          zGame.hero.loc.y -= 25;
+          zGame.hero.vel.y = -5;
+          zGame.hero.acc.y = 0.1;
+          this.hero.inAir = true;
+        }else{
+          zGame.hero.loc.y -= 5;
+          zGame.hero.vel.y = -2;
+          zGame.hero.acc.y = 0.1;
+        }
       }
    }
 }//  End of Game constructor function
