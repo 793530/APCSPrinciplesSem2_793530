@@ -5,7 +5,10 @@
 **  set 13, 2018
 */
 
-function Ball(loc, rad, col){
+
+
+
+function food(loc, rad, col){
   // Instance variables
    this.loc = loc;
    this.rad = rad;
@@ -38,6 +41,7 @@ function Ball(loc, rad, col){
       fill(this.col);
       ellipse(this.loc.x, this.loc.y, rad, rad);
    }
+
 
 
 }
