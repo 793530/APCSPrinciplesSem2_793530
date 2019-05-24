@@ -8,6 +8,12 @@ var b1;
 var food = [];
 var hero
 var enemy
+var img
+
+
+function preload() {
+  img = loadImage('//insert hero/enemy/bg/food');
+}
 
 function setup() {
 
@@ -18,11 +24,12 @@ function setup() {
   var rad = 25;
   var col = color(0,255,0);
   loadBalls(12);
+  image(img, 0, 0);
 
 }
 
 function draw() {
-  
+
   background(20,20,20,40);
   for(var i = 0; i<balls.length; i++){
      foods[i].run();
@@ -44,12 +51,25 @@ function draw() {
 
          if (gameState === 1){
            startGame();
+
+
+
          }
          if (gameState === 2){
            playGame();
+
+
+
+
+
          }
          if (gameState === 3){
            endGame();
+
+
+
+
+
 
          }
        }

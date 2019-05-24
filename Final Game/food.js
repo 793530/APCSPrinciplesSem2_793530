@@ -1,11 +1,4 @@
-
-/*git test
-**  Ball Constructor Function
-**  Kalpa Yakupitiyage
-**  set 13, 2018
-*/
-
-
+// Tom & Jerry Game
 
 
 function food(loc, rad, col){
@@ -25,10 +18,9 @@ function food(loc, rad, col){
 
   //checkEdges() reverses speed when the ball touches an edge
   this.checkEdges = function(){
+    
      if(this.loc.x < 0) this.vel.x = -this.vel.x;
-     if(this.loc.x > width) this.vel.x = -this.vel.x;
      if(this.loc.y < 0) this.vel.y = -this.vel.y;
-     if(this.loc.y > height) this.vel.y = -this.vel.y;
   }
   // This function changes the location of the ball
   // by adding speed to x and y
